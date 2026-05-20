@@ -44,14 +44,39 @@ class HomePage extends StatelessWidget {
           )),
 
           Expanded(
-            child: Column(
-              //PAREIAQUI
+            child: SingleChildScrollView(
+              child: Column(
+                children: List.generate(10, (_) =>
+                  Container(
+                    width: double.infinity,
+                    height: 120,
+                    margin: EdgeInsets.symmetric(vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ))
+              )
             )
           )
-
         ]
-      )
-
+      ),
+    bottomNavigationBar: BottomNavigationBar(
+      items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.monetization_on),
+            label: 'Finanças'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Finanças'
+          ),
+        ],
+      ),
     );
   }
 }
